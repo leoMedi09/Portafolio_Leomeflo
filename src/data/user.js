@@ -1,44 +1,80 @@
-// src/data/user.js
+// src/data/user.js - Alineado con tu CV real
 
 export const user = {
   name: "Leonardo José Medina Flores",
-  role: "Estudiante de Ingeniería de Sistemas y Computación",
-  description: "Soy un apasionado por la tecnología y la innovación. Me define la curiosidad y el interés constante por aprender cosas nuevas, desde arquitecturas de software hasta las últimas herramientas de IA. Busco un entorno donde pueda aportar mis habilidades y seguir desafiándome profesionalmente.",
+  role: "IT Project Assistant & Developer", // Basado en tu experiencia en Growby
+  // Alternativa: "Desarrollador Full Stack Junior"
+  
+  description: "Estudiante de VIII ciclo de Ingeniería de Sistemas con experiencia en desarrollo de software, análisis de datos y aplicaciones móviles. Motivado por la tecnología, con habilidades en programación backend, bases de datos y trabajo en equipo. Actualmente enfocado en crear soluciones eficientes mientras continúo creciendo profesionalmente.",
+  
   social: {
     github: "https://github.com/leoMedi09", 
-    linkedin: "https://www.linkedin.com/in/leomedina", 
+    linkedin: "https://www.linkedin.com/in/leonardo-medina-flores", 
     email: "mailto:leomedinaflores09@gmail.com"
   }
 };
 
+// Skills ajustados según tu CV y experiencia real
 export const skills = [
-  { name: "Python (Flask/FastAPI)", level: 90 },
-  { name: "Java & POO", level: 85 },
-  { name: "SQL (MySQL/PostgreSQL)", level: 85 }, 
-  { name: "React & Frontend", level: 75 }, 
-  { name: "Desarrollo Móvil Android", level: 75 },
+  { name: "Python (Flask/FastAPI)", level: 80 },  // Usas en proyectos reales
+  { name: "JavaScript & React", level: 75 },      // Experiencia en Growby con React/Vite
+  { name: "SQL (PostgreSQL/MySQL)", level: 80 },  // Administración en Growby
+  { name: "Java & POO", level: 70 },              // Formación académica
+  { name: "Android & Flutter", level: 65 },       // Experiencia en Growby y Cita Salud
 ];
 
+// Proyectos reales de tu CV
 export const projects = [
   {
-    title: "Sistema de Gestión (CRUD)",
-    description: "Aplicación web full-stack para administrar inventarios o usuarios. Permite crear, leer, actualizar y eliminar registros en tiempo real. Este proyecto demuestra mi capacidad para manejar bases de datos relacionales y conectar el backend con el frontend eficientemente.",
-    tags: ["React", "Python Flask", "MySQL", "Gestión"],
-    link: "https://github.com/leoMedi09/Proyecto_CRUD_Gestion", 
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" 
-  },
-  {
-    title: "Chatbot con IA",
-    description: "Asistente virtual inteligente capaz de responder preguntas y procesar lenguaje natural. Desarrollado integrando APIs modernas de Inteligencia Artificial, explorando cómo la tecnología puede automatizar la atención y mejorar la experiencia del usuario.",
-    tags: ["Python", "OpenAI API", "Streamlit", "IA"],
-    link: "https://github.com/leoMedi09/Chatbot_IA.git",
-    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop" 
+    title: "Guanacargo - Sistema Logístico",
+    description: "Plataforma web completa para optimizar la gestión logística de envíos. Implementa módulos de clientes, encomiendas, tracking y control de almacén. Desarrollado con Flask, MySQL y digitalización de procesos.",
+    tags: ["Python", "Flask", "MySQL", "Sistema Web"],
+    link: "https://github.com/leoMedi09/GUANACARGO", 
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1000&auto=format&fit=crop"
   },
   {
     title: "Cita Salud - App Móvil",
-    description: "Solución móvil nativa diseñada para reservar citas médicas en zonas rurales. Incluye una App Android intuitiva y un panel administrativo web, resolviendo una problemática real de accesibilidad a la salud mediante tecnología.",
-    tags: ["Android Studio", "FastAPI", "PostgreSQL", "App Nativa"], 
+    description: "Aplicación móvil integral para gestión y reserva de citas médicas. Incluye API REST con FastAPI, app nativa Android y panel administrativo web. Gestiona médicos, horarios y disponibilidad en tiempo real.",
+    tags: ["Android", "FastAPI", "PostgreSQL", "Vite"],
     link: "https://github.com/leoMedi09/Cita_Salud_RobleFarma",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000" 
+    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&q=80&w=1000"
+  },
+  {
+    title: "Sistema CRUD de Gestión",
+    description: "Aplicación web full-stack para administrar inventarios y usuarios con operaciones CRUD completas. Implementa autenticación, validaciones y conexión eficiente entre backend y frontend.",
+    tags: ["React", "Python", "Flask", "MySQL"],
+    link: "https://github.com/leoMedi09/Proyecto_CRUD_Gestion", 
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    title: "Chatbot con IA",
+    description: "Asistente virtual que procesa lenguaje natural integrando APIs de OpenAI. Desarrollado con Streamlit para explorar automatización de atención al cliente y procesamiento inteligente de consultas.",
+    tags: ["Python", "OpenAI API", "Streamlit", "NLP"],
+    link: "https://github.com/leoMedi09/Chatbot_IA",
+    image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
+    title: "Portafolio Personal",
+    description: "Portafolio web interactivo con animaciones modernas desarrollado con React, Vite y Framer Motion. Deploy automatizado en Vercel con integración continua desde GitHub.",
+    tags: ["React", "Vite", "Tailwind", "Framer Motion"],
+    link: "https://portafolio-leomeflo.vercel.app",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
+  }
+];
+
+// Experiencia laboral (opcional - para agregar una sección nueva)
+export const experience = [
+  {
+    company: "Growby",
+    position: "IT Project Assistant & Developer Intern",
+    period: "Feb 2025 - Nov 2025",
+    location: "Remoto - Lima, Perú",
+    achievements: [
+      "Asistencia técnica en proyectos V13 y SIFRAH con React, Vite y Flutter",
+      "Desarrollo de scripts de automatización en Python con APIs REST",
+      "Ejecución de pruebas QA con Postman, Swagger y JMeter",
+      "Administración y optimización de PostgreSQL y MySQL",
+      "Documentación de incidencias en Jira"
+    ]
   }
 ];

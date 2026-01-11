@@ -135,7 +135,7 @@ const Skills = () => {
               </motion.div>
             </motion.div>
 
-            {/* Stats decorativas - CAMBIO AQUÍ */}
+            {/* Stats decorativas */}
             <motion.div 
               className="grid grid-cols-3 gap-4 mt-8"
               initial={{ opacity: 0, y: 20 }}
@@ -143,9 +143,9 @@ const Skills = () => {
               transition={{ delay: 0.7 }}
             >
               {[
-                { label: "Proyectos", value: "4+" },        // ✅ CAMBIO: 15+ → 4+
-                { label: "Tecnologías", value: skills.length }, // ✅ Correcto (5)
-                { label: "Aprendizaje", value: "365D" }     // ✅ CAMBIO: 2Y → 365D
+                { label: "Proyectos", value: "6+" },
+                { label: "Tecnologías", value: skills.length },
+                { label: "Experiencia", value: "10M" }
               ].map((stat, i) => (
                 <motion.div
                   key={i}
@@ -289,7 +289,7 @@ const SkillBar = ({ skill, index, isInView }) => {
   );
 };
 
-// Componente de texto con efecto máquina de escribir
+// Componente de texto con efecto máquina de escribir - ARREGLADO
 const TypewriterCode = () => {
   const codeLines = [
     { text: 'class', color: 'text-purple-400' },
@@ -315,7 +315,7 @@ const TypewriterCode = () => {
       }, 150);
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex]);
+  }, [currentIndex, codeLines.length]); // ✅ AGREGADO: dependencias correctas
 
   return (
     <span>
@@ -330,13 +330,15 @@ const TypewriterCode = () => {
           {line.text}
         </motion.span>
       ))}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.5, repeat: Infinity }}
-        className="text-blue-400"
-      >
-        |
-      </motion.span>
+      {currentIndex >= codeLines.length && (
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.5, repeat: Infinity }}
+          className="text-blue-400"
+        >
+          |
+        </motion.span>
+      )}
     </span>
   );
 };

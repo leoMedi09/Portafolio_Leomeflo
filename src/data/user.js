@@ -10,7 +10,7 @@ export const user = {
   social: {
     github: "https://github.com/leoMedi09", 
     linkedin: "https://www.linkedin.com/in/leonardo-medina-flores", 
-    email: "mailto:leomedinaflores09@gmail.com"
+    email: "mailto:leonardojosemedinaflores0902@gmail.com?subject=Contacto desde tu Portafolio"
   }
 };
 

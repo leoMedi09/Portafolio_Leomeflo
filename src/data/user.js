@@ -57,7 +57,7 @@ export const projects = [
     title: "Portafolio Personal",
     description: "Portafolio web interactivo con animaciones modernas desarrollado con React, Vite y Framer Motion. Deploy automatizado en Vercel con integración continua desde GitHub.",
     tags: ["React", "Vite", "Tailwind", "Framer Motion"],
-    link: "https://portafolio-leomeflo.vercel.app",
+    link: "https://github.com/leoMedi09/Portafolio_Leomeflo",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=1000&auto=format&fit=crop"
   }
 ];

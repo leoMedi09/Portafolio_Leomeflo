@@ -26,6 +26,13 @@ export const skills = [
 // Proyectos reales de tu CV
 export const projects = [
   {
+    title: "TaskFlow - Gestor de Tareas Realtime",
+    description: "Aplicación de productividad colaborativa con sincronización en tiempo real vía WebSockets. Incluye notificaciones en vivo, priorización de tareas, calendario y diseño responsive minimalista.",
+    tags: ["React", "Node.js", "MongoDB", "Socket.io", "TailwindCSS"],
+    link: "https://github.com/leoMedi09/TaskFlow",
+    image: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=1000&auto=format&fit=crop"
+  },
+  {
     title: "Guanacargo - Sistema Logístico",
     description: "Plataforma web completa para optimizar la gestión logística de envíos. Implementa módulos de clientes, encomiendas, tracking y control de almacén. Desarrollado con Flask, MySQL y digitalización de procesos.",
     tags: ["Python", "Flask", "MySQL", "Sistema Web"],

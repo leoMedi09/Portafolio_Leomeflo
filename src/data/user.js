@@ -5,7 +5,7 @@ export const user = {
   role: "IT Project Assistant & Developer", // Basado en tu experiencia en Growby
   // Alternativa: "Desarrollador Full Stack Junior"
   
-  description: "Estudiante de VIII ciclo de Ingeniería de Sistemas con experiencia en desarrollo de software, análisis de datos y aplicaciones móviles. Motivado por la tecnología, con habilidades en programación backend, bases de datos y trabajo en equipo. Actualmente enfocado en crear soluciones eficientes mientras continúo creciendo profesionalmente.",
+  description: "Estudiante de IX ciclo de Ingeniería de Sistemas con experiencia en desarrollo de software, análisis de datos y aplicaciones móviles. Motivado por la tecnología, con habilidades en programación backend, bases de datos y trabajo en equipo. Actualmente enfocado en crear soluciones eficientes mientras continúo creciendo profesionalmente.",
   
   social: {
     github: "https://github.com/leoMedi09", 

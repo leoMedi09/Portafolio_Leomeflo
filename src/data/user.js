@@ -10,17 +10,25 @@ export const user = {
   social: {
     github: "https://github.com/leoMedi09", 
     linkedin: "https://www.linkedin.com/in/leonardo-medina-flores", 
-    email: "https://mail.google.com/mail/?view=cm&fs=1&to=leonardojosemedinaflores0902@gmail.com&su=Contacto desde tu Portafolio&body=Hola Leonardo,%0D%0A%0D%0AMe gustaría contactarte..."
+    email: "https://mail.google.com/mail/?view=cm&fs=1&to=leonardojosemedinaflores0902@gmail.com&su=Contacto desde tu Portafolio&body=Hola Leonardo,%0D%0A%0D%0AMe gustaría contactarte...",
+    whatsapp: "https://wa.me/51959540598"
   }
 };
 
-// Skills ajustados según tu CV y experiencia real
+// Herramientas y Lenguajes Principales
 export const skills = [
-  { name: "Python (Flask/FastAPI)", level: 80 },  // Usas en proyectos reales
-  { name: "JavaScript & React", level: 75 },      // Experiencia en Growby con React/Vite
-  { name: "SQL (PostgreSQL/MySQL)", level: 80 },  // Administración en Growby
-  { name: "Java & POO", level: 70 },              // Formación académica
-  { name: "Android & Flutter", level: 65 },       // Experiencia en Growby y Cita Salud
+  { name: "Java", level: 85 },
+  { name: "Python", level: 85 },
+  { name: "Flask", level: 80 },                // Backend Framework
+  { name: "React", level: 90 },
+  { name: "Vite", level: 85 },                 // Build Tool
+  { name: "Node.js", level: 75 },
+  { name: "PostgreSQL", level: 80 },
+  { name: "MySQL", level: 80 },
+  { name: "Android Studio", level: 70 },       // IDE
+  { name: "Flutter", level: 65 },
+  { name: "MongoDB", level: 70 },
+  { name: "Git", level: 85 },
 ];
 
 // Proyectos reales de tu CV

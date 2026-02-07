@@ -1,6 +1,7 @@
 import React from "react";
 import { skills } from "../data/user";
 import { motion, useInView } from "framer-motion";
+import { Database, Smartphone, Code2, Terminal, Server, Layout, Cpu, Zap, Palette, Bot } from "lucide-react";
 
 const Skills = () => {
   const ref = React.useRef(null);
@@ -33,7 +34,7 @@ const Skills = () => {
       </div>
 
       {/* Luz de fondo */}
-      <motion.div 
+      <motion.div
         className="absolute top-1/2 right-1/4 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[150px]"
         animate={{
           scale: [1, 1.3, 1],
@@ -47,7 +48,7 @@ const Skills = () => {
       />
 
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
-        
+
         <div className="grid md:grid-cols-2 gap-16 items-center">
           {/* Texto lateral */}
           <motion.div
@@ -55,7 +56,7 @@ const Skills = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <motion.h2 
+            <motion.h2
               className="text-4xl font-bold text-white mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -63,22 +64,22 @@ const Skills = () => {
             >
               Stack Tecnológico
             </motion.h2>
-            
-            <motion.p 
+
+            <motion.p
               className="text-gray-400 mb-8 text-lg"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ delay: 0.3 }}
             >
               Mi caja de herramientas combina la potencia del backend con{" "}
-              <motion.span 
+              <motion.span
                 className="text-blue-400 font-semibold"
                 whileHover={{ scale: 1.05, color: "#60a5fa" }}
               >
                 Java y Python
               </motion.span>
               , la gestión eficiente de datos con{" "}
-              <motion.span 
+              <motion.span
                 className="text-blue-400 font-semibold"
                 whileHover={{ scale: 1.05, color: "#60a5fa" }}
               >
@@ -88,7 +89,7 @@ const Skills = () => {
             </motion.p>
 
             {/* Bloque de código animado */}
-            <motion.div 
+            <motion.div
               className="p-6 bg-gray-900/50 border border-gray-800 rounded-xl relative overflow-hidden group"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
@@ -108,7 +109,7 @@ const Skills = () => {
                 }}
               />
 
-              <motion.code 
+              <motion.code
                 className="text-sm text-gray-300 relative z-10 block"
                 initial={{ opacity: 0 }}
                 animate={isInView ? { opacity: 1 } : {}}
@@ -136,7 +137,7 @@ const Skills = () => {
             </motion.div>
 
             {/* Stats decorativas */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-3 gap-4 mt-8"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -149,9 +150,9 @@ const Skills = () => {
               ].map((stat, i) => (
                 <motion.div
                   key={i}
-                  className="text-center p-4 bg-gray-900/30 rounded-lg border border-gray-800"
-                  whileHover={{ 
-                    scale: 1.05, 
+                  className="text-center p-4 bg-gray-900/30 rounded-lg border border-gray-800 transition-all duration-300"
+                  whileHover={{
+                    scale: 1.05,
                     borderColor: "rgba(59, 130, 246, 0.5)",
                     backgroundColor: "rgba(59, 130, 246, 0.05)"
                   }}
@@ -159,7 +160,7 @@ const Skills = () => {
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ delay: 0.8 + i * 0.1, type: "spring" }}
                 >
-                  <motion.div 
+                  <motion.div
                     className="text-2xl font-bold text-blue-400"
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
@@ -173,15 +174,15 @@ const Skills = () => {
             </motion.div>
           </motion.div>
 
-          {/* Barras de Progreso */}
-          <motion.div 
-            className="space-y-8"
+          {/* Grid de Skills 2.0 (Cards) */}
+          <motion.div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-4 auto-rows-fr"
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
             {skills.map((skill, index) => (
-              <SkillBar key={index} skill={skill} index={index} isInView={isInView} />
+              <SkillCard key={index} skill={skill} index={index} isInView={isInView} />
             ))}
           </motion.div>
         </div>
@@ -191,105 +192,60 @@ const Skills = () => {
   );
 };
 
-// Componente para cada barra de skill
-const SkillBar = ({ skill, index, isInView }) => {
-  const [count, setCount] = React.useState(0);
+// Componente Card de Skill Mejorado
+const SkillCard = ({ skill, index, isInView }) => {
 
-  React.useEffect(() => {
-    if (isInView && count < skill.level) {
-      const timer = setTimeout(() => {
-        setCount(count + 1);
-      }, 20);
-      return () => clearTimeout(timer);
-    }
-  }, [count, skill.level, isInView]);
+  const getIcon = (name) => {
+    const n = name.toLowerCase();
+    if (n.includes('python')) return <Terminal className="w-6 h-6 text-yellow-500" />;
+    if (n.includes('flask')) return <Server className="w-6 h-6 text-white" />; // Flask (Backend)
+    if (n.includes('vite')) return <Zap className="w-6 h-6 text-yellow-400" />; // Vite (Rápido)
+    if (n.includes('react') || n.includes('javascript')) return <Code2 className="w-6 h-6 text-blue-400" />;
+    if (n.includes('node')) return <Server className="w-6 h-6 text-green-500" />;
+    if (n.includes('sql') || n.includes('mongo')) return <Database className="w-6 h-6 text-indigo-400" />;
+    if (n.includes('android') || n.includes('flutter')) return <Smartphone className="w-6 h-6 text-purple-400" />;
+    if (n.includes('java')) return <Cpu className="w-6 h-6 text-red-500" />;
+    if (n.includes('git')) return <Bot className="w-6 h-6 text-orange-500" />;
+    return <Layout className="w-6 h-6 text-gray-400" />;
+  };
 
   return (
-    <motion.div 
-      className="group"
-      initial={{ opacity: 0, x: 50 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
+    <motion.div
+      className="group relative p-4 bg-gray-900/40 border border-gray-800 rounded-xl overflow-hidden backdrop-blur-sm hover:border-blue-500/50 transition-all duration-300"
+      initial={{ opacity: 0, y: 20 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ delay: index * 0.1, type: "spring" }}
+      whileHover={{ y: -5, boxShadow: "0 10px 30px -10px rgba(59, 130, 246, 0.2)" }}
     >
-      <div className="flex justify-between mb-2">
-        <motion.span 
-          className="text-white font-medium"
-          whileHover={{ scale: 1.05, color: "#60a5fa" }}
-        >
-          {skill.name}
-        </motion.span>
-        <motion.span 
-          className="text-blue-400 font-mono text-sm"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
-          transition={{ delay: index * 0.1 + 0.3 }}
-        >
-          {count}%
-        </motion.span>
-      </div>
-      
-      <div className="h-1.5 w-full bg-gray-800 rounded-full overflow-hidden relative">
-        {/* Barra de progreso animada */}
-        <motion.div 
-          className="h-full bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-400 rounded-full relative"
-          initial={{ width: 0 }}
-          animate={isInView ? { width: `${skill.level}%` } : {}}
-          transition={{ 
-            duration: 1.5, 
-            delay: index * 0.1,
-            ease: "easeOut"
-          }}
-        >
-          {/* Efecto de brillo que recorre la barra */}
-          <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
-            animate={{
-              x: ["-100%", "200%"],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatDelay: 1,
-              ease: "linear",
-            }}
-          />
-        </motion.div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-blue-500/0 to-blue-500/5 group-hover:via-blue-500/10 transition-all duration-500" />
 
-        {/* Partículas que flotan de la barra */}
-        {isInView && [...Array(3)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-1 h-1 bg-blue-400 rounded-full"
-            style={{
-              left: `${(skill.level * (i + 1)) / 4}%`,
-              top: "50%",
-            }}
-            animate={{
-              y: [-10, -30],
-              opacity: [1, 0],
-              scale: [1, 0.5],
-            }}
-            transition={{
-              duration: 1,
-              repeat: Infinity,
-              delay: i * 0.3 + index * 0.1,
-            }}
-          />
-        ))}
-      </div>
+      <div className="flex items-center gap-4 relative z-10">
+        <div className="p-2.5 bg-gray-800 rounded-lg group-hover:bg-gray-700 transition-colors duration-300 ring-1 ring-white/5 group-hover:ring-blue-500/30">
+          {getIcon(skill.name)}
+        </div>
 
-      {/* Shadow animado al hacer hover */}
-      <motion.div
-        className="h-1.5 w-full rounded-full mt-[-6px] blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        style={{
-          background: `linear-gradient(to right, rgb(37, 99, 235) 0%, rgb(34, 211, 238) ${skill.level}%, transparent ${skill.level}%)`,
-        }}
-      />
+        <div>
+          <h3 className="text-white font-semibold group-hover:text-blue-400 transition-colors duration-300">
+            {skill.name}
+          </h3>
+          <div className="flex gap-1 mt-1">
+            {[...Array(5)].map((_, i) => (
+              <div
+                key={i}
+                className={`h-1 w-4 rounded-full ${i < (skill.level / 20)
+                  ? "bg-blue-500"
+                  : "bg-gray-700"
+                  }`}
+              />
+            ))}
+          </div>
+        </div>
+      </div>
     </motion.div>
   );
 };
 
-// Componente de texto con efecto máquina de escribir - ARREGLADO
+// Componente de texto con efecto máquina de escribir
 const TypewriterCode = () => {
   const codeLines = [
     { text: 'class', color: 'text-purple-400' },
@@ -315,7 +271,7 @@ const TypewriterCode = () => {
       }, 150);
       return () => clearTimeout(timeout);
     }
-  }, [currentIndex, codeLines.length]); // ✅ AGREGADO: dependencias correctas
+  }, [currentIndex, codeLines.length]);
 
   return (
     <span>

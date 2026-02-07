@@ -1,14 +1,14 @@
 import React from "react";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 import { user } from "../data/user";
 import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-20 relative overflow-hidden">
-      
+
       {/* Fondo animado con múltiples capas */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-1/2 -translate-x-1/2 w-[500px] h-[500px] bg-blue-500/20 rounded-full blur-[120px] -z-10"
         animate={{
           scale: [1, 1.2, 1],
@@ -20,9 +20,9 @@ const Hero = () => {
           ease: "easeInOut"
         }}
       />
-      
+
       {/* Segunda capa de luz */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-cyan-500/15 rounded-full blur-[100px] -z-10"
         animate={{
           scale: [1, 1.3, 1],
@@ -59,15 +59,15 @@ const Hero = () => {
 
       <div className="container mx-auto px-6 z-10 text-center md:text-left">
         <div className="max-w-3xl">
-          
+
           {/* Saludo estilo código con animación */}
-          <motion.div 
+          <motion.div
             className="inline-block px-3 py-1 mb-4 border border-blue-500/30 rounded-full bg-blue-500/10 backdrop-blur-sm"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <motion.span 
+            <motion.span
               className="text-blue-400 font-mono text-sm"
               animate={{ opacity: [1, 0.5, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -77,14 +77,14 @@ const Hero = () => {
           </motion.div>
 
           {/* Nombre con animación de aparición letra por letra */}
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             Soy{" "}
-            <motion.span 
+            <motion.span
               className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-300 to-blue-400 bg-[length:200%_auto]"
               animate={{
                 backgroundPosition: ["0% center", "200% center"],
@@ -98,9 +98,9 @@ const Hero = () => {
               {user.name}
             </motion.span>
           </motion.h1>
-          
+
           {/* Rol con efecto de escritura */}
-          <motion.h2 
+          <motion.h2
             className="text-2xl md:text-3xl text-gray-300 mb-6 font-light"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -110,7 +110,7 @@ const Hero = () => {
           </motion.h2>
 
           {/* Descripción con fade in */}
-          <motion.p 
+          <motion.p
             className="text-gray-400 text-lg mb-8 leading-relaxed max-w-2xl"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -120,13 +120,13 @@ const Hero = () => {
           </motion.p>
 
           {/* Botones y Redes Sociales con animación escalonada */}
-          <motion.div 
+          <motion.div
             className="flex flex-col md:flex-row gap-4 items-center"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <motion.a 
+            <motion.a
               href="#portfolio"
               className="px-8 py-3 bg-white text-black font-bold rounded-full hover:bg-gray-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.3)] relative overflow-hidden group"
               whileHover={{ scale: 1.05 }}
@@ -140,8 +140,8 @@ const Hero = () => {
               />
               Ver Proyectos
             </motion.a>
-            
-            <motion.div 
+
+            <motion.div
               className="flex gap-4 md:ml-6"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -150,6 +150,7 @@ const Hero = () => {
               <SocialBtn href={user.social.github} icon={<Github size={20} />} delay={0} />
               <SocialBtn href={user.social.linkedin} icon={<Linkedin size={20} />} delay={0.1} />
               <SocialBtn href={user.social.email} icon={<Mail size={20} />} delay={0.2} />
+              <SocialBtn href={user.social.whatsapp} icon={<MessageCircle size={20} />} delay={0.3} />
             </motion.div>
           </motion.div>
 
@@ -170,7 +171,7 @@ const Hero = () => {
           />
         </div>
       </motion.div>
-    </section> 
+    </section>
   );
 };
 
@@ -204,15 +205,15 @@ const TypewriterText = ({ text }) => {
 
 // Botón social mejorado con animaciones
 const SocialBtn = ({ href, icon, delay }) => (
-  <motion.a 
-    href={href} 
-    target="_blank" 
+  <motion.a
+    href={href}
+    target="_blank"
     rel="noopener noreferrer"
     className="p-3 border border-gray-700 rounded-full text-gray-400 hover:text-white hover:border-blue-500 hover:bg-blue-500/10 transition-all duration-300 relative group"
     initial={{ opacity: 0, scale: 0 }}
     animate={{ opacity: 1, scale: 1 }}
     transition={{ delay, type: "spring", stiffness: 200 }}
-    whileHover={{ 
+    whileHover={{
       scale: 1.1,
       rotate: [0, -10, 10, 0],
     }}
